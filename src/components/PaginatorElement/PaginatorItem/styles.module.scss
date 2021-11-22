@@ -1,0 +1,33 @@
+.paginator-list__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 41px;
+  height: 41px;
+  border: 1px solid #fff;
+  transition: .2s;
+  font-weight: 500;
+  user-select: none;
+
+  &.active {
+    background-color: #fff;
+    color: #000;
+  }
+
+  &:not(.active):hover {
+    background-color: #464646;
+  }
+
+  &_white {
+    border-color: #000;
+
+    &.active {
+      background-color: #000;
+      color: #fff;
+    }
+
+    &:not(.active):hover {
+      background-color: #EDEDED;
+    }
+  }
+}

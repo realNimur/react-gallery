@@ -1,0 +1,84 @@
+@import "src/mediaQueryVaribles";
+
+.painting-item {
+  flex-basis: 100%;
+  margin-bottom: 20px;
+  height: 205px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+  color: #000;
+  border-radius: 20px;
+  overflow: hidden;
+
+  &:last-child {
+    margin-bottom: 30px;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    .painting-item__description {
+      animation: fadeOutItem .5s forwards;
+    }
+
+    .painting-item__more {
+      display: block;
+    }
+  }
+
+  &__description {
+    background: rgba(255, 255, 255, 0.75);
+    padding: 5px 15px;
+    transition: .2s;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+  &__caption {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+
+  &__text {
+    margin-bottom: 5px;
+
+    &_bold {
+      font-weight: 500;
+    }
+  }
+
+  &__more {
+    display: none;
+  }
+
+  @include tablets {
+    height: 249px;
+    flex-basis: 48.5%;
+  }
+  @include desktop_small {
+    flex-basis: 32.5%;
+    height: 230px;
+    margin-right: 1.25%;
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
+  @include desktop {
+    flex-basis: 32%;
+    height: 275px;
+  }
+}
+
+@keyframes fadeOutItem {
+  from {
+    bottom: -100%;
+  }
+  to {
+    bottom: 0;
+  }
+}

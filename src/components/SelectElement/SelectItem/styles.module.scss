@@ -1,0 +1,26 @@
+.dropdown-content__item {
+  padding: 10px 0 10px 22px;
+  transition: .2s;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &_created {
+    input {
+      background: #FFFFFF;
+      padding: 15px;
+      border: none;
+      outline: none;
+      color: rgba(0, 0, 0, 0.3);
+      border-radius: 8px;
+      width: 100%;
+      max-width: 95px;
+    }
+  }
+
+  &:hover {
+    background: #FFFFFF;
+    color: #000;
+  }
+}

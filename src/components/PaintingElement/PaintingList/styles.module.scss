@@ -1,0 +1,16 @@
+@import "src/mediaQueryVaribles";
+
+.paintings-list {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  @include tablets {
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+  @include desktop_small {
+    justify-content: flex-start;
+    margin-bottom: 20px;
+  }
+}
