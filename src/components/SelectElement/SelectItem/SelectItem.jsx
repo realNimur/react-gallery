@@ -1,33 +1,56 @@
 import React from 'react';
-import {useDispatch} from "react-redux";
-import {useSearchParams} from "react-router-dom";
-import {setQueryAuthor, setQueryLocation, setQueryPage} from "../../store/filters/actions";
-import styles from './styles.module.scss'
+import { useDispatch } from 'react-redux';
+import { useSearchParams } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import {
+  setQueryAuthor, setQueryLocation, setQueryPage, setTypeShowList,
+} from '../../../store/filters/actions';
+import styles from './styles.module.scss';
 
-const SelectItem = ({item, type}) => {
-    const dispatch = useDispatch();
-    const [searchParams, setSearchParams] = useSearchParams();
-    const {id} = item;
-    const text = item.name || item.location;
+const SelectItem = function SelectItem({ item, type }) {
+  const dispatch = useDispatch();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const { id, name, location } = item;
+  const text = name || location;
 
-    const handlerSelectItemClick = (type, id, text) => {
-        const newSearchParams = new URLSearchParams(searchParams);
-        let queryName = '';
-        if (type === 'authors') {
-            queryName = 'authorId';
-            dispatch(setQueryAuthor(text));
-        } else if (type === 'locations') {
-            queryName = 'locationId'
-            dispatch(setQueryLocation(text));
-        }
-        newSearchParams.set(queryName, `${id}`);
-        dispatch(setQueryPage(1));
-        setSearchParams(newSearchParams);
+  const handlerSelectItemClick = () => {
+    const newSearchParams = new URLSearchParams(searchParams);
+    let queryName = '';
+    if (type === 'authors') {
+      queryName = 'authorId';
+      dispatch(setQueryAuthor(text));
+    } else if (type === 'locations') {
+      queryName = 'locationId';
+      dispatch(setQueryLocation(text));
     }
-    return (
-        <li onClick={() => handlerSelectItemClick(type, id, text)}
-            className={styles["dropdown-content__item"]}>{text}</li>
-    );
+    newSearchParams.set(queryName, `${id}`);
+    dispatch(setTypeShowList(''));
+    dispatch(setQueryPage(1));
+    setSearchParams(newSearchParams);
+  };
+  return (
+    <button
+      type="button"
+      onClick={handlerSelectItemClick}
+      className={styles['dropdown-content__item']}
+    >
+      {text}
+    </button>
+  );
 };
-
+SelectItem.propTypes = {
+  item: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string,
+    location: PropTypes.string,
+  }),
+  type: PropTypes.string.isRequired,
+};
+SelectItem.defaultProps = {
+  item: {
+    id: 1,
+    name: 'John',
+    location: 'Moscow',
+  },
+};
 export default SelectItem;

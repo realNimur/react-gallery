@@ -1,4 +1,4 @@
-@import "src/mediaQueryVaribles";
+@import "../../../mediaQueryVaribles";
 
 .dropdown {
   display: inline-block;
@@ -64,7 +64,8 @@
         border-color: #000;
         background-color: #fff;
 
-        & li:not(.dropdown-content__item_created) {
+        & button {
+          color: #000;
           &:hover {
             color: #fff;
             background-color: #000;

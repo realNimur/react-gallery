@@ -1,1 +1,3 @@
-export { default } from './SelectTag'
+import SelectTag from './SelectTag';
+
+export default SelectTag;

@@ -1,0 +1,29 @@
+@import "src/mediaQueryVaribles";
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 35px 0;
+
+  &__logo {
+    width: 54px;
+    @include tablets {
+      width: 64px;
+    }
+
+    img {
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__brightness {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+  }
+}

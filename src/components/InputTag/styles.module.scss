@@ -1,0 +1,23 @@
+.input {
+  padding: 15px;
+  font-size: 13px;
+  outline: none;
+  border: 1px solid #FFFFFF;
+  border-radius: 8px;
+  background-color: transparent;
+  color: #fff;
+  width: 100%;
+
+  &::placeholder {
+    color: rgba(#fff, 0.3);
+  }
+
+  &_white {
+    color: #000;
+    border-color: #000;
+
+    &::placeholder {
+      color: rgba(#000, 0.3);
+    }
+  }
+}

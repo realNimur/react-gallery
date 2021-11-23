@@ -6,9 +6,11 @@
   height: 41px;
   border: 1px solid #fff;
   transition: .2s;
-  font-weight: 500;
   user-select: none;
-
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  background-color: transparent;
   &.active {
     background-color: #fff;
     color: #000;
@@ -20,7 +22,7 @@
 
   &_white {
     border-color: #000;
-
+    color: #000;
     &.active {
       background-color: #000;
       color: #fff;

@@ -1,7 +1,29 @@
+@import "src/mediaQueryVaribles";
+
 .App {
-    background-color: #000;
-    color: #fff;
+  background-color: #000;
+  color: #fff;
+  min-height: 100vh;
+  padding: 0 20px 34px;
+
+  &_white {
+    background-color: #fff;
+  }
+
+  &__container {
     margin: 0 auto;
     width: 100%;
     max-width: 1120px;
+  }
+
+  @include tablets {
+    padding: 0 34px 54px;
+  }
+  @include desktop_small {
+    padding: 0 42px 62px;
+  }
+  @include desktop {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }

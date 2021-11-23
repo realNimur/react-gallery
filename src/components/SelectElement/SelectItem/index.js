@@ -1,1 +1,3 @@
-export {default} from './SelectItem'
+import SelectItem from './SelectItem';
+
+export default SelectItem;

@@ -5,7 +5,12 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-
+  width: 100%;
+  background-color: transparent;
+  color: #fff;
+  text-align: left;
+  border:none;
+  outline: none;
   &_created {
     input {
       background: #FFFFFF;

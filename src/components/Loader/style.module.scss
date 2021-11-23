@@ -1,0 +1,23 @@
+.loader {
+  &-wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+
+  width: 70px;
+  height: 70px;
+  border: 2px dashed red;
+  border-radius: 50%;
+  animation: rotateLoader 1s infinite linear;
+}
+@keyframes rotateLoader {
+  from{
+    transform: rotate(0);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}

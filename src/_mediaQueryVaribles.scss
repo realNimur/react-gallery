@@ -4,13 +4,13 @@ $desktop_small-width: 1024px;
 $desktop-width: 1366px;
 
 @mixin tablets {
-  @media (max-width: #{$tablet-width}) {
+  @media (min-width: #{$tablet-width}) {
     @content;
   }
 }
 
 @mixin desktop_small {
-  @media (max-width: #{$desktop_small-width}) {
+  @media (min-width: #{$desktop_small-width}) {
     @content;
   }
 }

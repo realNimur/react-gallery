@@ -1,25 +1,24 @@
-import logo from '../../logo.svg';
-import './App.css';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import cn from 'classnames';
+import Filter from '../Container/Filter';
+import Header from '../Container/Header';
+import Paintings from '../Container/Paintings';
+import styles from './styles.module.scss';
 
-function App() {
+const App = function App() {
+  const themeColor = useSelector((store) => store.themeColor);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className={cn(styles.App, themeColor === 'white' && styles.App_white)}>
+        <div className={styles.App__container}>
+          <Header />
+          <Filter />
+          <Paintings />
+        </div>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;

@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: flex-start;
     list-style: none;
-    cursor: pointer;
+
 
     &__arrow {
       display: flex;
@@ -13,6 +13,8 @@
       width: 41px;
       height: 41px;
       border: 1px solid #fff;
+      cursor: pointer;
+      background-color: transparent;
 
       &.disabled {
         border-color: rgba(255, 255, 255, 0.3);
@@ -38,14 +40,11 @@
 
     &_white {
       color: #000;
-
       .paginator-list__arrow {
         &.disabled {
           border-color: rgba(0, 0, 0, 0.3);
         }
-
         border-color: #000;
-
         & svg {
           & path {
             fill: #000;
