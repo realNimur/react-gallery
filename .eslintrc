@@ -1,6 +1,7 @@
 "extends": [ "airbnb", "airbnb/hooks" ]
 "rules": {
   "react/react-in-jsx-scope": "off",
+  "linebreak-style": 0
 }
 "env": {
     "browser": true
